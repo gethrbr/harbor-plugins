@@ -1,0 +1,32 @@
+{
+  "name": "harbor",
+  "version": "0.5.9",
+  "description": "Your team's shared memory for coding agents: recall on every prompt, guardrails that block what the team banned, and learnings saved for review.",
+  "author": {
+    "name": "Harbor",
+    "url": "https://gethrbr.com"
+  },
+  "homepage": "https://gethrbr.com",
+  "repository": "https://github.com/gethrbr/harbor-plugins",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "team",
+    "guardrails",
+    "mcp",
+    "context"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Harbor",
+    "shortDescription": "Your team's shared memory and guardrails",
+    "longDescription": "Your team's shared memory for coding agents: recall on every prompt, guardrails that block what the team banned, and learnings saved for review.",
+    "developerName": "Harbor",
+    "category": "Developer Tools",
+    "websiteURL": "https://gethrbr.com",
+    "defaultPrompt": [
+      "Use $harbor:login to connect Harbor to my team's workspace"
+    ]
+  }
+}

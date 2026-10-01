@@ -4,6 +4,9 @@ Harbor gives your coding agents your team's shared memory: recall on every
 prompt, guardrails that block what the team banned, and learnings saved for a
 person to review.
 
+Harbor is invite-only for now. Signing in needs a Harbor account: join the
+waitlist at https://app.gethrbr.com/waitlist and we will let you in.
+
 ## Claude Code
 
 ```
@@ -27,7 +30,7 @@ trusts the plugin's hooks for you, so there is nothing to approve in `/hooks`.
 
 ## How it works
 
-Both need Node 18 or later: the sign-in runs harborloop 0.5.9 through
+Both need Node 18 or later: the sign-in runs harborloop 0.5.10 through
 `npx`, which puts Harbor's hooks in `~/.harbor/bin`. The plugins' own hooks
 only launch those.
 

@@ -1,0 +1,13 @@
+{
+  "name": "harbor",
+  "owner": {
+    "name": "Harbor"
+  },
+  "plugins": [
+    {
+      "name": "harbor",
+      "source": "./plugins/cursor",
+      "description": "Your team's shared memory for coding agents: recall when a chat starts and as the agent edits files, guardrails that block what the team banned, and learnings saved for review."
+    }
+  ]
+}

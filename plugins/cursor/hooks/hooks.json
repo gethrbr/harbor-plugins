@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-context",
+        "timeout": 8
+      }
+    ],
+    "sessionEnd": [
+      {
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-report",
+        "timeout": 5
+      }
+    ],
+    "stop": [
+      {
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-capture",
+        "timeout": 10
+      }
+    ],
+    "postToolUse": [
+      {
+        "matcher": "Write",
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-toolcontext",
+        "timeout": 5
+      }
+    ],
+    "preToolUse": [
+      {
+        "matcher": "Shell",
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-toolcontext",
+        "timeout": 5
+      },
+      {
+        "matcher": "Write",
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-toolcontext",
+        "timeout": 5
+      }
+    ],
+    "preCompact": [
+      {
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-compact",
+        "timeout": 2
+      }
+    ]
+  }
+}

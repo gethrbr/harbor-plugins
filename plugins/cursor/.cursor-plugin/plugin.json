@@ -1,0 +1,20 @@
+{
+  "name": "harbor",
+  "version": "0.5.11",
+  "description": "Your team's shared memory for coding agents: recall when a chat starts and as the agent edits files, guardrails that block what the team banned, and learnings saved for review.",
+  "author": {
+    "name": "Harbor"
+  },
+  "homepage": "https://gethrbr.com",
+  "repository": "https://github.com/gethrbr/harbor-plugins",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "team",
+    "guardrails",
+    "mcp",
+    "context"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}

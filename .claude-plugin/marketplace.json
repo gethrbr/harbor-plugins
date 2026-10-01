@@ -12,7 +12,7 @@
       "name": "harbor",
       "source": "./plugins/claude",
       "description": "Your team's shared memory for coding agents: recall on every prompt, guardrails that block what the team banned, and learnings saved for review.",
-      "version": "0.5.10"
+      "version": "0.5.11"
     }
   ]
 }

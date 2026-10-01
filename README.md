@@ -40,7 +40,7 @@ and run `/harbor:login` in a Cursor chat. It signs you in once in the browser.
 
 ## How it works
 
-All three need Node 18 or later: the sign-in runs harborloop 0.5.11 through
+All three need Node 18 or later: the sign-in runs harborloop 0.5.12 through
 `npx`, which puts Harbor's hooks in `~/.harbor/bin`. The plugins' own hooks
 only launch those.
 

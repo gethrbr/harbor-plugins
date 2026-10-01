@@ -7,6 +7,12 @@
         "timeout": 8
       }
     ],
+    "beforeSubmitPrompt": [
+      {
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-context",
+        "timeout": 8
+      }
+    ],
     "sessionEnd": [
       {
         "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-report",

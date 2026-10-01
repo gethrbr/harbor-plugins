@@ -28,7 +28,8 @@ if [ -x "$bin" ]; then
   exec "$bin"
 fi
 
-if [ "$hook" = session-context ] && [ ! -x "$dir/bin/session-context.mjs" ]; then
+if [ "$hook" = session-context ] && [ ! -x "$dir/bin/session-context.mjs" ] &&
+  grep -q '"hook_event_name"[[:space:]]*:[[:space:]]*"sessionStart"'; then
   echo '{"additional_context":"Harbor, a plugin in this Cursor, says: \"Harbor is installed but not connected. Run /harbor:login to sign in. No Harbor account yet? Join the waitlist at https://app.gethrbr.com/waitlist\" Mention this to the user once, briefly. Do not run the sign-in yourself."}'
 fi
 exit 0

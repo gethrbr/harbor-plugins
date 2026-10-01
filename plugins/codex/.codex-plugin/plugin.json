@@ -25,6 +25,8 @@
     "developerName": "Harbor",
     "category": "Developer Tools",
     "websiteURL": "https://gethrbr.com",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg",
     "defaultPrompt": [
       "Use $harbor:login to connect Harbor to my team's workspace"
     ]

@@ -1,6 +1,6 @@
 {
   "name": "harbor",
-  "version": "0.5.12",
+  "version": "0.5.13",
   "description": "Your team's shared memory for coding agents: recall on every prompt, guardrails that block what the team banned, and learnings saved for review.",
   "author": {
     "name": "Harbor",

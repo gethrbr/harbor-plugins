@@ -38,6 +38,16 @@ Then install Harbor from Cursor's plugins page (`/plugins` in the Cursor CLI),
 and run `/harbor:login` in a Cursor chat. It signs you in once in the browser.
 `/harbor:status` checks the install.
 
+Cursor keeps the plugin at the commit you added, and `marketplace update` does
+not move it. To update, remove the marketplace and add it again:
+
+```
+cursor-agent plugin marketplace remove harbor
+cursor-agent plugin marketplace add https://github.com/gethrbr/harbor-plugins
+```
+
+`/harbor:status` says when the plugin is behind.
+
 ## How it works
 
 All three need Node 18 or later: the sign-in runs harborloop 0.5.12 through

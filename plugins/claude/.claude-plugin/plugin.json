@@ -15,5 +15,9 @@
     "guardrails",
     "mcp",
     "context"
-  ]
+  ],
+  "privacyPolicyUrl": "https://gethrbr.com/legal/privacy",
+  "supportUrl": "https://gethrbr.com/contact",
+  "documentationUrl": "https://gethrbr.com/docs/cli",
+  "termsOfServiceUrl": "https://gethrbr.com/legal/terms"
 }

@@ -94,9 +94,9 @@ to ask for that repo's. It writes them to `~/.harbor`, the agents'
 skills folders, `.claude/docs` in connected repos, and Claude Code's memory
 folder for the repo, and it may add one line pointing at those documents to the
 repo's `CLAUDE.md` or `AGENTS.md`. It sends a sync report: a machine ID, the
-hostname, the OS and its version, the harborloop version, checksums of the files
-Harbor wrote, and the names and sizes of the skills on this machine, Harbor's or
-not. It sends no file contents. It also asks registry.npmjs.org for the latest
+hostname, the OS and its version, the harborloop version, the folders, names and
+checksums of the files Harbor wrote, and the names and sizes of the skills on
+this machine, Harbor's or not. It sends no file contents. It also asks registry.npmjs.org for the latest
 harborloop version.
 
 ## Turning it off
@@ -117,4 +117,5 @@ npx -y harborloop unbind      # in each connected repo: the files Harbor wrote t
 npx -y harborloop uninstall   # the hooks, the MCP entry, the background sync, ~/.harbor
 ```
 
-Privacy: https://gethrbr.com/legal/privacy. Questions: https://gethrbr.com/contact.
+- Privacy policy: https://gethrbr.com/legal/privacy
+- Questions: https://gethrbr.com/contact

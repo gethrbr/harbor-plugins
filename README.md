@@ -50,7 +50,7 @@ cursor-agent plugin marketplace add https://github.com/gethrbr/harbor-plugins
 
 ## How it works
 
-All three need Node 18 or later: the sign-in runs harborloop 0.5.13 through
+All three need Node 18 or later: the sign-in runs harborloop 0.5.14 through
 `npx`, which puts Harbor's hooks in `~/.harbor/bin`. The plugins' own hooks
 only launch those.
 

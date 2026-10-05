@@ -24,7 +24,7 @@ The plugin is two shell scripts, plus the skills that call them. Neither
 script connects to anything itself.
 
 - `scripts/harbor.sh` runs only when you use `$harbor:login` or
-  `$harbor:status`. It runs `npx -y harborloop@0.5.17`: npm downloads
+  `$harbor:status`. It runs `npx -y harborloop@0.5.18`: npm downloads
   harborloop, Harbor's command-line tool (MIT license), from registry.npmjs.org,
   with a compiled build of it for your platform
   (`@gethrbr/harborloop-<platform>`). The version is pinned, and each release
@@ -45,6 +45,7 @@ script connects to anything itself.
 | `PostToolUse` | `session-toolcontext` | recalls context for a file the agent wrote with its Write or Edit tool |
 | `PreToolUse` | `session-toolcontext` | checks a shell command, or a write with the Write or Edit tool, against your team's guardrails, on this machine, and blocks it when a rule says to |
 | `PostCompact` | `session-compact` | notes that the context was compacted, so the next recall is sent in full; sends nothing |
+| `SubagentStart` | `session-context` | recalls your team's context for your prompt |
 
 Codex asks you to trust a plugin's hooks before it runs them. The sign-in
 records that trust in `~/.codex/config.toml` for this plugin's hooks, and for

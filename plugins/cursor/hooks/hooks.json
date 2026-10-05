@@ -42,6 +42,11 @@
         "matcher": "Write",
         "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-toolcontext",
         "timeout": 5
+      },
+      {
+        "matcher": "^MCP:",
+        "command": "sh \"${CURSOR_PLUGIN_ROOT}/hooks/run.sh\" session-toolcontext",
+        "timeout": 5
       }
     ],
     "preCompact": [

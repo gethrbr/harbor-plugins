@@ -24,7 +24,7 @@ The plugin is two shell scripts, plus the commands that call them. Neither
 script connects to anything itself.
 
 - `scripts/harbor.sh` runs only when you use `/harbor:login` or
-  `/harbor:status`. It runs `npx -y harborloop@0.5.18`: npm downloads
+  `/harbor:status`. It runs `npx -y harborloop@0.5.21`: npm downloads
   harborloop, Harbor's command-line tool (MIT license), from registry.npmjs.org,
   with a compiled build of it for your platform
   (`@gethrbr/harborloop-<platform>`). The version is pinned, and each release

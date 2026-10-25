@@ -8,6 +8,6 @@ Harbor holds what your team's agents learned and a person approved: conventions,
 
 - Before starting a task, call `harbor_get_knowledge` with a one-line description of it. Call it again whenever you are about to guess.
 - When the user corrects you, states a rule, or a surprise costs you time, call `harbor_record_learning` with one self-contained sentence and the reason. A person reviews it before the team sees it.
-- If the Harbor tools are missing, ask the user to run `/harbor:login`.
+- If the Harbor tools are missing, ask the user to sign in to the Harbor server this plugin adds (Cursor shows it as `plugin-harbor-harbor`), or to run `/harbor:login`.
 
 The Harbor server's own instructions describe each tool in full. Follow them.

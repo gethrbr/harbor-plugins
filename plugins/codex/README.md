@@ -24,7 +24,7 @@ The plugin is two shell scripts, plus the skills that call them. Neither
 script connects to anything itself.
 
 - `scripts/harbor.sh` runs only when you use `$harbor:login` or
-  `$harbor:status`. It runs `npx -y harborloop@0.5.21`: npm downloads
+  `$harbor:status`. It runs `npx -y harborloop@0.6.9`: npm downloads
   harborloop, Harbor's command-line tool (MIT license), from registry.npmjs.org,
   with a compiled build of it for your platform
   (`@gethrbr/harborloop-<platform>`). The version is pinned, and each release
@@ -62,8 +62,8 @@ and waits for the answer on a local port (127.0.0.1). Then it:
 - installs Harbor's hooks in `~/.harbor/bin`;
 - connects the repo you ran it in, which sends that repo's git remote URL to
   Harbor;
-- schedules a background sync every 15 minutes (a launchd agent on macOS, a
-  systemd user timer on Linux).
+- schedules nothing: a prompt starts Harbor's daily check in the background,
+  at most once a day.
 
 It sends your repo's committed `CLAUDE.md` or `AGENTS.md` to your team's
 review queue only if you answer yes when it asks, in a terminal.
@@ -88,16 +88,17 @@ nothing about the repo you are in.
 The hooks do not mask your prompt or the file excerpt before they send them.
 The shell commands the agent runs are checked on your machine and are not sent.
 
-The background sync renews your credential, and downloads your team's
-guardrails, skills and documents, sending each connected repo's git remote URL
-to ask for that repo's. It writes them to `~/.harbor`, the agents'
-skills folders, `.claude/docs` in connected repos, and Claude Code's memory
-folder for the repo, and it may add one line pointing at those documents to the
-repo's `CLAUDE.md` or `AGENTS.md`. It sends a sync report: a machine ID, the
-hostname, the OS and its version, the harborloop version, the folders, names and
-checksums of the files Harbor wrote, and the names and sizes of the skills on
-this machine, Harbor's or not. It sends no file contents. It also asks registry.npmjs.org for the latest
-harborloop version.
+While the agent runs tools, the guardrail check downloads your team's
+guardrails into `~/.harbor` in the background, at most every 30 seconds,
+sending nothing about the repo.
+
+The daily check renews your credential and sends a machine ID, the hostname,
+the OS and its version, and the harborloop version. For each connected repo it
+sends the names of the tools the repo uses, the package scripts that run a
+command Harbor has a guardrail for, and the deny rules in the repo's committed
+Claude Code settings, with any `NAME=value` in a command masked, and only
+when they changed. It sends no file contents. It also asks registry.npmjs.org
+for the latest harborloop version.
 
 ## Turning it off
 
@@ -113,8 +114,7 @@ The pause is kept on your machine and read before any request.
 To remove Harbor, take the plugin out with `codex plugin remove harbor@harbor`, and run:
 
 ```
-npx -y harborloop unbind      # in each connected repo: the files Harbor wrote there
-npx -y harborloop uninstall   # the hooks, the MCP entry, the background sync, ~/.harbor
+npx -y harborloop uninstall   # the hooks, the MCP entry, ~/.harbor
 ```
 
 - Privacy policy: https://gethrbr.com/legal/privacy

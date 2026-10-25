@@ -35,7 +35,7 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "Write|Edit",
+        "matcher": "Write|Edit|Read|Bash|Grep|exec|edit|write|read|grep",
         "hooks": [
           {
             "type": "command",
@@ -47,7 +47,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit|mcp__.*",
+        "matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit|mcp__.*|exec|edit|write|read|grep",
         "hooks": [
           {
             "type": "command",

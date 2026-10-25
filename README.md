@@ -38,6 +38,9 @@ Then install Harbor from Cursor's plugins page (`/plugins` in the Cursor CLI),
 and run `/harbor:login` in a Cursor chat. It signs you in once in the browser.
 `/harbor:status` checks the install.
 
+Grok Bot uses Cursor's plugins. Add Harbor there and sign in to the Harbor
+server it adds.
+
 Cursor keeps the plugin at the commit you added, and `marketplace update` does
 not move it. To update, remove the marketplace and add it again:
 
@@ -50,7 +53,7 @@ cursor-agent plugin marketplace add https://github.com/gethrbr/harbor-plugins
 
 ## How it works
 
-All three need Node 18 or later: the sign-in runs harborloop 0.5.21 through
+All three need Node 18 or later: the sign-in runs harborloop 0.6.9 through
 `npx`, which puts Harbor's hooks in `~/.harbor/bin`. The plugins' own hooks
 only launch those.
 

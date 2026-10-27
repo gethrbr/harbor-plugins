@@ -35,7 +35,7 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "Write|Edit|Read|Bash|Grep|exec|edit|write|read|grep",
+        "matcher": "Write|Edit|Read|Bash|Grep|mcp__.*__harbor_record_learning|exec|edit|write|read|grep",
         "hooks": [
           {
             "type": "command",

@@ -24,7 +24,7 @@ The plugin is two shell scripts, plus the commands that call them. Neither
 script connects to anything itself.
 
 - `scripts/harbor.sh` runs only when you use `/harbor:login` or
-  `/harbor:status`. It runs `npx -y harborloop@0.6.11`: npm downloads
+  `/harbor:status`. It runs `npx -y harborloop@0.6.12`: npm downloads
   harborloop, Harbor's command-line tool (MIT license), from registry.npmjs.org,
   with a compiled build of it for your platform
   (`@gethrbr/harborloop-<platform>`). The version is pinned, and each release
@@ -41,7 +41,7 @@ script connects to anything itself.
 | `UserPromptSubmit` | `session-context` | recalls your team's context for your prompt |
 | `SessionEnd` | `session-report` | reports which recalled facts the session cited |
 | `Stop` | `session-capture` | at the end of a turn, may ask the agent to record what it learned |
-| `PostToolUse` on Write, Edit, Read, Bash, Grep, exec, edit, write, read, grep | `session-toolcontext` | recalls context for a file the agent wrote with its Write or Edit tool |
+| `PostToolUse` on Write, Edit, Read, Bash, Grep, mcp__.*__harbor_record_learning, exec, edit, write, read, grep | `session-toolcontext` | recalls context for a file the agent wrote with its Write or Edit tool |
 | `PreToolUse` on Bash, Write, Edit, MultiEdit, NotebookEdit, mcp__.*, exec, edit, write, read, grep | `session-toolcontext` | checks a shell command, or a write with the Write or Edit tool, against your team's guardrails, on this machine, and blocks it when a rule says to |
 | `SessionStart` | `session-compact` | notes that the context was compacted, so the next recall is sent in full; sends nothing |
 | `SubagentStart` | `session-context` | recalls your team's context for your prompt |

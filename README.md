@@ -4,8 +4,11 @@ Harbor gives your coding agents your team's shared memory: recall on every
 prompt, guardrails that block what the team banned, and learnings saved for a
 person to review.
 
-Harbor is invite-only for now. Signing in needs a Harbor account: join the
-waitlist at https://app.gethrbr.com/waitlist and we will let you in.
+Site and guides: [gethrbr.com](https://gethrbr.com) ·
+[Quickstart](https://gethrbr.com/docs/quickstart)
+
+Signing in needs a Harbor account, free for up to 2 people with no card.
+Create one at https://app.gethrbr.com/sign-up and then sign in.
 
 ## Claude Code
 
@@ -53,7 +56,7 @@ cursor-agent plugin marketplace add https://github.com/gethrbr/harbor-plugins
 
 ## How it works
 
-All three need Node 18 or later: the sign-in runs harborloop 0.6.13 through
+All three need Node 18 or later: the sign-in runs harborloop 0.6.16 through
 `npx`, which puts Harbor's hooks in `~/.harbor/bin`. The plugins' own hooks
 only launch those.
 
@@ -62,3 +65,11 @@ runs, so nothing runs twice.
 
 Already set up with `npx harborloop init`? You do not need a plugin. If you
 install one anyway, its hooks stay quiet while `harbor init`'s are registered.
+
+## Guides
+
+- [Why does Claude ignore my CLAUDE.md?](https://gethrbr.com/blog/why-claude-ignores-claude-md)
+- [AGENTS.md vs CLAUDE.md: which tools read which](https://gethrbr.com/blog/agents-md-vs-claude-md)
+- [Claude Code memory vs Codex, Cursor and Copilot memory](https://gethrbr.com/blog/claude-code-memory-vs-codex-cursor-copilot)
+- [Codex skills, and sharing them with Claude Code and Cursor](https://gethrbr.com/blog/codex-skills)
+- [We checked 3,905 CLAUDE.md and AGENTS.md files on GitHub](https://gethrbr.com/blog/claude-md-agents-md-github-study)

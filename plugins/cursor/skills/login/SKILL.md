@@ -12,4 +12,4 @@ If that path did not resolve, the script is `../../scripts/harbor.sh` relative t
 
 Then show the user the command's output as it is, and tell them to start a new chat: Harbor's hooks and tools load when a chat starts.
 
-If it says several workspaces are available, ask the user which one to use and run the same command again with `--workspace <id>` added at the end. If the sign-in timed out or the user has no Harbor account, tell them Harbor is invite-only for now and they can join the waitlist at https://app.gethrbr.com/waitlist. If it fails for any other reason, show the error and stop.
+If it says several workspaces are available, ask the user which one to use and run the same command again with `--workspace <id>` added at the end. If the sign-in timed out or the user has no Harbor account, tell them they can create one at https://app.gethrbr.com/sign-up (free for up to 2 people, no card) and then run the same command again. If it fails for any other reason, show the error and stop.

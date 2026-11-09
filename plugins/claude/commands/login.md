@@ -3,7 +3,7 @@ description: Connect Harbor to your team's workspace with one browser sign-in
 ---
 Run this command with the Bash tool. It opens a browser tab for the sign-in and waits for it, so give it a timeout of 600000 ms:
 
-sh "${CLAUDE_PLUGIN_ROOT}/scripts/harbor.sh" init --plugin claude
+cd / && npx -y "harborloop@0.6.29" init --plugin claude --cwd "$OLDPWD"
 
 Then show the user the command's output as it is.
 

@@ -56,7 +56,7 @@ cursor-agent plugin marketplace add https://github.com/gethrbr/harbor-plugins
 
 ## How it works
 
-All three need Node 18 or later: the sign-in runs harborloop 0.6.24 through
+All three need Node 18 or later: the sign-in runs harborloop 0.6.29 through
 `npx`, which puts Harbor's hooks in `~/.harbor/bin`. The Codex and Cursor
 plugins' own hooks only launch those. The Claude Code plugin ships no hooks:
 its sign-in registers Harbor's hooks in `~/.claude/settings.json`, as

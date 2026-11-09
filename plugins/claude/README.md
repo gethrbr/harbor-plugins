@@ -23,21 +23,20 @@ Run `/harbor:login` to sign in, once, in your browser.
 
 ## What this plugin runs
 
-The plugin is two shell scripts, plus the commands that call them. Neither
-script connects to anything itself.
+The plugin is one shell script, plus the commands that call it. It ships
+no hooks, and the script connects to nothing itself.
 
 - `scripts/harbor.sh` runs only when you use `/harbor:login` or
-  `/harbor:status`. It runs `npx -y harborloop@0.6.19`: npm downloads
+  `/harbor:status`. It runs `npx -y harborloop@0.6.24`: npm downloads
   harborloop, Harbor's command-line tool (MIT license), from registry.npmjs.org,
   with a compiled build of it for your platform
   (`@gethrbr/harborloop-<platform>`). The version is pinned, and each release
   of this plugin pins the next one.
-- `hooks/run.sh` runs on the events below. It runs the matching hook that
-  `/harbor:login` installed in `~/.harbor/bin`, with the event's input.
-  Before you sign in there is no hook there, so it only says, when a session
-  starts, how to sign in. It also stands down where `harbor init` registered
-  Harbor's hooks itself, in ~/.claude/settings.json, so no hook runs
-  twice.
+
+`/harbor:login` registers Harbor's hooks in `~/.claude/settings.json`,
+as `npx harborloop init` does. They run the hooks it installed in
+`~/.harbor/bin`, on the events below. `npx harborloop uninstall` takes
+them out again.
 
 | Event | Hook | What it does |
 |---|---|---|
@@ -49,8 +48,10 @@ script connects to anything itself.
 | `SessionStart` | `session-compact` | notes that the context was compacted, so the next recall is sent in full; sends nothing |
 | `SubagentStart` | `session-context` | recalls your team's context for your prompt |
 
-Cursor runs Claude Code's plugins too. Inside Cursor this plugin does
-nothing, and Harbor's Cursor plugin runs instead, so no hook runs twice.
+This plugin ships no hooks of its own, so there is nothing to approve
+in `/hooks` and nothing runs before you sign in. Cursor runs the hooks in
+`~/.claude/settings.json` too; while they are there, Harbor's Cursor plugin
+stays quiet, so no hook runs twice.
 
 ## What the sign-in does
 
@@ -60,7 +61,8 @@ and waits for the answer on a local port (127.0.0.1). Then it:
 - keeps your Harbor credential in `~/.harbor/auth.json`, readable only by you;
 - adds Harbor's MCP server, https://mcp.gethrbr.com/mcp, with a token of its
   own, to `~/.claude.json`;
-- installs Harbor's hooks in `~/.harbor/bin`;
+- installs Harbor's hooks in `~/.harbor/bin`, and registers them in
+  `~/.claude/settings.json`;
 - connects the repo you ran it in, which sends that repo's git remote URL to
   Harbor;
 - schedules nothing: a prompt starts Harbor's daily check in the background,

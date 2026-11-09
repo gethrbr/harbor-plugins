@@ -56,12 +56,15 @@ cursor-agent plugin marketplace add https://github.com/gethrbr/harbor-plugins
 
 ## How it works
 
-All three need Node 18 or later: the sign-in runs harborloop 0.6.19 through
-`npx`, which puts Harbor's hooks in `~/.harbor/bin`. The plugins' own hooks
-only launch those.
+All three need Node 18 or later: the sign-in runs harborloop 0.6.24 through
+`npx`, which puts Harbor's hooks in `~/.harbor/bin`. The Codex and Cursor
+plugins' own hooks only launch those. The Claude Code plugin ships no hooks:
+its sign-in registers Harbor's hooks in `~/.claude/settings.json`, as
+`npx harborloop init` does.
 
-Cursor also runs Claude Code's plugins. Inside Cursor, only the Cursor plugin
-runs, so nothing runs twice.
+Cursor also runs Claude Code's hooks. While Harbor's are in
+`~/.claude/settings.json`, the Cursor plugin's stay quiet, so nothing runs
+twice.
 
 Already set up with `npx harborloop init`? You do not need a plugin. If you
 install one anyway, its hooks stay quiet while `harbor init`'s are registered.

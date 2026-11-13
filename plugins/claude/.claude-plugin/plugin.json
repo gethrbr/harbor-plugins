@@ -1,6 +1,6 @@
 {
   "name": "harbor",
-  "version": "0.6.33",
+  "version": "0.6.35",
   "description": "Your team's shared memory for coding agents: recall on every prompt, guardrails that block what the team banned, and learnings saved for review.",
   "author": {
     "name": "Harbor",
@@ -16,6 +16,7 @@
     "mcp",
     "context"
   ],
+  "icon": "./.claude-plugin/icon.png",
   "privacyPolicyUrl": "https://gethrbr.com/legal/privacy",
   "supportUrl": "https://gethrbr.com/contact",
   "documentationUrl": "https://gethrbr.com/docs/cli",

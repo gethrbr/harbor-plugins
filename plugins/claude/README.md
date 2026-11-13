@@ -26,7 +26,7 @@ Run `/harbor:login` to sign in, once, in your browser.
 The plugin is two commands and a skill. It ships no hooks and no scripts.
 
 - `/harbor:login` and `/harbor:status` run
-  `npx -y harborloop@0.6.33`, and only when you use them: npm downloads
+  `npx -y harborloop@0.6.35`, and only when you use them: npm downloads
   harborloop, Harbor's command-line tool (MIT license), from registry.npmjs.org,
   with a compiled build of it for your platform
   (`@gethrbr/harborloop-<platform>`). The version is pinned, and each release
